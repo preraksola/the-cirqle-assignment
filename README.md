@@ -4,8 +4,6 @@ The Cirqle Evaluation Assignment
 
 # Development Build Process
 
----
-
 ### 1. Install the dependencies
 
 ```bash
@@ -25,8 +23,6 @@ npm run start-be
 ```bash
 npm run start-fe
 ```
-
----
 
 ## Build the frontend app for production
 
