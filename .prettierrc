@@ -1,0 +1,7 @@
+{
+  "useTabs": true,
+  "trailingComma": "none",
+  "semi": true,
+  "vueIndentScriptAndStyle": true,
+  "printWidth": 160
+}

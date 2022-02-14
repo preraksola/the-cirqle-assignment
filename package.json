@@ -1,13 +1,18 @@
 {
-  "name": "the-cirqle-assignment",
-  "version": "0.1.0",
+  "name": "cq-frontend",
+  "version": "1.0.0",
+  "description": "The Cirqle Evaluation Assignment ",
+  "productName": "The Cirqle Assignment",
+  "author": "Prerak Sola <prerak6962@gmail.com>",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "postinstall": "cd api && npm install",
+    "start-fe": "vue-cli-service serve",
+    "start-be": "cd api && npm run start",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
@@ -35,8 +40,19 @@
     "rules": {}
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
 }

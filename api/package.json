@@ -1,0 +1,18 @@
+{
+  "name": "cq-backend",
+  "version": "1.0.0",
+  "description": "The Cirqle NodeJS assignment",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "author": "Prerak Sola <prerak6962@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "cors": "^2.8.5",
+    "axios": "^0.25.0"
+  }
+}

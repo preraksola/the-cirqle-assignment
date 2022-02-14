@@ -1,24 +1,39 @@
-# the-cirqle-assignment
+# The Cirqle Assignment
 
-## Project setup
-```
+The Cirqle Evaluation Assignment
+
+# Development Build Process
+
+---
+
+### 1. Install the dependencies
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### 2. Set Facebook authentication token in `api/.env` file
+
+### 3. Start the backend node server
+
+```bash
+npm run start-be
 ```
 
-### Compiles and minifies for production
+### 4. Start the frontend app in development mode
+
+```bash
+npm run start-fe
 ```
+
+---
+
+## Build the frontend app for production
+
+```bash
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
