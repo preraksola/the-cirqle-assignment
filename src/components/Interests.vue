@@ -1,20 +1,26 @@
 <template>
-	<div class="row">
-		<div class="card interest-selection" v-if="!isLoading">
-			<h3>Available Interests</h3>
-			<pre v-if="interestTree.length === 0">None</pre>
-			<div v-for="p in interestTree" v-bind:key="p.name" class="interest-checkbox">
-				<input type="checkbox" v-model="selectedInterests" :name="p.name" :value="p.name" :id="p.id" @change="onTicked" />
-				<label :for="p.id">{{ p.name }}</label>
+	<div>
+		<div class="row" v-if="!isLoading && !errorMessage">
+			<div class="card interest-selection">
+				<h3>Available Interests</h3>
+				<pre v-if="interestTree.length === 0">None</pre>
+				<div v-for="p in interestTree" v-bind:key="p.name" class="interest-checkbox">
+					<input type="checkbox" v-model="selectedInterests" :name="p.name" :value="p.name" :id="p.id" @change="onTicked" />
+					<label :for="p.id">{{ p.name }}</label>
+				</div>
+			</div>
+
+			<div class="interest-list">
+				<h3>Selected Interests</h3>
+				<pre> {{ selectionStructure.length > 0 ? JSON.stringify(selectionStructure, null, 2) : "None" }}</pre>
 			</div>
 		</div>
-
-		<div class="interest-list" v-if="!isLoading">
-			<h3>Selected Interests</h3>
-			<pre> {{ selectionStructure.length > 0 ? JSON.stringify(selectionStructure, null, 2) : "None" }}</pre>
+		<div class="loader" v-if="isLoading">
+			<img src="../assets/loading.gif" alt="loading" />
+			<div>Loading data...</div>
 		</div>
-		<div v-if="isLoading">
-			<span>Loading data...</span>
+		<div v-if="errorMessage && !isLoading" class="error-text">
+			{{ errorMessage }}
 		</div>
 	</div>
 </template>
@@ -26,6 +32,7 @@
 		name: "Interests",
 		data() {
 			return {
+				errorMessage: null,
 				isLoading: false,
 				interestTree: [],
 				selectionStructure: [],
@@ -59,7 +66,7 @@
 							this.interestTree = this.getTree(interestData);
 						} else {
 							console.error(data.message);
-							alert("Error fetching data!");
+							this.errorMessage = "Error fetching data!";
 						}
 						this.isLoading = false;
 					})
@@ -118,5 +125,17 @@
 
 	.interest-checkbox {
 		padding: 0.5vh 0;
+	}
+
+	.loader {
+		color: cornflowerblue;
+		text-align: center;
+	}
+
+	.error-text {
+		text-align: center;
+		font-size: medium;
+		font-weight: bold;
+		color: indianred;
 	}
 </style>

@@ -29,7 +29,7 @@ exports.getInterests = async (req, res) => {
 
 		res.json({ status: 1, interests: normalInterests });
 	} catch (err) {
-		console.error(err);
+		console.error(err.response.data);
 		res.json({ status: -1, message: "Error fetching data" });
 	}
 };
